@@ -17,6 +17,7 @@ function TodoWrapper() {
             text: inputText
         };
         setTasks([...tasks,newTasks]); // add the new task with the remaining previously added tasks
+        setInputText("");
        }
     }
     // Function for toggling the task status
@@ -32,13 +33,24 @@ function TodoWrapper() {
 
   return (
     <>
-    <div>
-        <div>
-            <input type="text" placeholder='New Tasks' value={inputText} onChange={handleInputChange}/>
-            <button onClick={addTask}>Add Task</button>
+    <div className='container mx-auto p-4'>
+        <div className='max-w-sm mx-auto'>
+            <input 
+              type="text" 
+              placeholder='New Tasks' 
+              value={inputText} 
+              onChange={handleInputChange}
+              className='w-full p-2 border-gray-200 rounded'
+            />
+            {/* Add Task Button */}
+            <button onClick={addTask}className='w-full mt-2 bg-blue-500 text-white py-2 rounded hover:bg-blue-600'>Add Task</button>
         </div>
     </div>
-    <TodoList tasks={tasks} onToggleCompletion = {toggleCompletion} onDeleteTask={deleteTask} />
+    <TodoList 
+       tasks={tasks} 
+       onToggleCompletion = {toggleCompletion} 
+       onDeleteTask={deleteTask} 
+    />
     </>
   )
 }
