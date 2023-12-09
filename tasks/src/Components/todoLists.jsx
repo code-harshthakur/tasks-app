@@ -13,7 +13,6 @@ function TodoList({tasks,onToggleCompletion,onDeleteTask}) {
          ) )}
     </div>
   );
-
 }
 
 TodoList.propTypes = {

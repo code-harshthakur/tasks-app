@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 function Todo({task,onToggleCompletion,onDeleteTask}) {
   return (
     <>
-     <div className='flex items-center justify-between'>
+     <div className='bg-white shadow-md rounded px-4 py-2 mb-2 mx-w-sm'>
         <p className='text-gray-800'>{task.text}</p>
         {/* Buttons for toggling completion & deleting tasks */}
         <button 
